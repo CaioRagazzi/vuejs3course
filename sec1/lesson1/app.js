@@ -1,15 +1,30 @@
-const button = document.querySelector('button');
-const input = document.querySelector('input');
-const list = document.querySelector('ul');
+Vue.createApp({
+    data() {
+        return {
+            goals : [],
+            enteredValue: ''
+        };
+    },
+    methods: {
+        addGoal(){
+            this.goals.push(this.enteredValue);
+            this.enteredValue = '';
+        }
+    }
+}).mount('#app');
 
-button.addEventListener('click', addGoal)
+// const button = document.querySelector('button');
+// const input = document.querySelector('input');
+// const list = document.querySelector('ul');
 
-function addGoal() {
-    const enteredValue = input.value;
-    const listItem = document.createElement('li');
+// button.addEventListener('click', addGoal)
 
-    listItem.textContent = enteredValue;
+// function addGoal() {
+//     const enteredValue = input.value;
+//     const listItem = document.createElement('li');
 
-    list.appendChild(listItem);
-    input.value = '';
-}
+//     listItem.textContent = enteredValue;
+
+//     list.appendChild(listItem);
+//     input.value = '';
+// }
